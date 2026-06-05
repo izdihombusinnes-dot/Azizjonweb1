@@ -1,63 +1,95 @@
 /* ====================================
-   LARGE TABLET
+   LARGE DESKTOP
 ==================================== */
 
-@media(max-width:1200px){
+@media (max-width: 1400px){
+
+    .container{
+        width:95%;
+    }
+
+    .hero-left h1{
+        font-size:64px;
+    }
+
+}
+
+/* ====================================
+   TABLET LARGE
+==================================== */
+
+@media (max-width: 1200px){
 
     .hero-grid{
-
         grid-template-columns:1fr;
-
+        gap:60px;
         text-align:center;
     }
 
     .hero-left{
-
         order:2;
     }
 
     .hero-right{
-
         order:1;
     }
 
     .hero-left p{
-
         margin-left:auto;
         margin-right:auto;
     }
 
     .hero-buttons{
-
         justify-content:center;
     }
 
     .hero-mini-stats{
-
         justify-content:center;
     }
 
     .about-grid{
-
         grid-template-columns:1fr;
     }
 
     .experience-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-        grid-template-columns:
-        repeat(2,1fr);
+    .projects-grid{
+        grid-template-columns:1fr;
     }
 
     .skills-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .social-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-        grid-template-columns:
-        repeat(3,1fr);
+    .avatar-area{
+        width:450px;
+        height:450px;
+    }
+
+    .avatar-area img{
+        width:300px;
+        height:300px;
+    }
+
+    .ring-1{
+        width:360px;
+        height:360px;
+    }
+
+    .ring-2{
+        width:420px;
+        height:420px;
+    }
+
+    .ring-3{
+        width:480px;
+        height:480px;
     }
 
 }
@@ -66,58 +98,41 @@
    TABLET
 ==================================== */
 
-@media(max-width:992px){
+@media (max-width: 992px){
 
     .section{
-
-        padding:90px 0;
+        padding:100px 0;
     }
 
     .section-header h2{
-
         font-size:48px;
     }
 
     .hero-left h1{
-
-        font-size:56px;
+        font-size:54px;
     }
 
     .contact-box h2{
-
         font-size:48px;
     }
 
-    .projects-grid{
-
-        grid-template-columns:1fr;
-    }
-
     .experience-grid{
-
         grid-template-columns:1fr;
     }
 
     .timeline::before{
-
         left:20px;
     }
 
     .timeline-item{
-
         width:100%;
-
-        padding-left:60px;
-
+        padding-left:70px;
         padding-right:0;
-
         left:0 !important;
-
         text-align:left !important;
     }
 
     .timeline-item::before{
-
         left:11px !important;
         right:auto !important;
     }
@@ -128,148 +143,119 @@
    MOBILE
 ==================================== */
 
-@media(max-width:768px){
+@media (max-width: 768px){
 
     .header{
-
         top:10px;
     }
 
     .header .container{
-
-        padding:16px;
+        padding:15px;
     }
 
     .navbar{
-
         display:none;
     }
 
     .mobile-menu-btn{
-
         display:block;
     }
 
     .hero{
-
+        padding-top:160px;
         min-height:auto;
-
-        padding-top:150px;
     }
 
     .hero-left h1{
-
         font-size:42px;
-
         letter-spacing:-1px;
     }
 
     .hero-left p{
-
         font-size:17px;
     }
 
     .hero-buttons{
-
         flex-direction:column;
     }
 
     .primary-btn,
     .secondary-btn{
-
         width:100%;
+        text-align:center;
     }
 
     .hero-mini-stats{
-
         flex-direction:column;
-
-        gap:20px;
+        gap:25px;
+        text-align:center;
     }
 
     .avatar-area{
-
         width:320px;
         height:320px;
     }
 
     .avatar-area img{
-
         width:220px;
         height:220px;
     }
 
     .ring-1{
-
         width:260px;
         height:260px;
     }
 
     .ring-2{
-
         width:300px;
         height:300px;
     }
 
     .ring-3{
-
         width:340px;
         height:340px;
     }
 
     .floating-tag{
-
         display:none;
     }
 
     .about-right{
-
         grid-template-columns:1fr;
     }
 
     .skills-grid{
-
         grid-template-columns:1fr;
     }
 
     .social-grid{
-
         grid-template-columns:1fr;
     }
 
     .contact-box{
-
         padding:40px 25px;
     }
 
     .contact-box h2{
-
         font-size:36px;
     }
 
     .contact-actions{
-
         flex-direction:column;
     }
 
     .footer-top{
-
         flex-direction:column;
-
         text-align:center;
     }
 
     .footer-links{
-
         flex-wrap:wrap;
-
         justify-content:center;
     }
 
     .footer-bottom{
-
         flex-direction:column;
-
         text-align:center;
     }
 
@@ -279,59 +265,51 @@
    SMALL MOBILE
 ==================================== */
 
-@media(max-width:480px){
+@media (max-width: 480px){
 
     .container{
-
         width:94%;
     }
 
-    .hero-left h1{
+    .logo-content{
+        display:none;
+    }
 
+    .hero-left h1{
         font-size:34px;
     }
 
     .section-header h2{
-
-        font-size:36px;
+        font-size:34px;
     }
 
     .large-card h3{
-
         font-size:28px;
     }
 
     .project-card{
-
-        padding:28px;
+        padding:26px;
     }
 
     .project-card h3{
-
         font-size:26px;
     }
 
     .contact-box h2{
-
-        font-size:30px;
+        font-size:28px;
     }
 
     .floating-dock{
-
-        bottom:16px;
-
+        bottom:15px;
         padding:8px;
-
-        gap:8px;
+        gap:6px;
     }
 
     .dock-item{
-
-        padding:10px 12px;
+        padding:10px;
     }
 
     .dock-text{
-
         display:none;
     }
 
@@ -342,89 +320,42 @@
 ==================================== */
 
 body.loaded #loader{
-
     opacity:0;
-
     visibility:hidden;
-
-    transition:
-    opacity .6s ease,
-    visibility .6s ease;
 }
 
 /* ====================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
 ==================================== */
 
 .reveal{
-
     opacity:0;
-
     transform:translateY(40px);
-
     transition:all .8s ease;
 }
 
 .reveal.active{
-
     opacity:1;
-
     transform:translateY(0);
 }
 
 /* ====================================
-   GLASS EFFECT HELPERS
-==================================== */
-
-.glass{
-
-    background:rgba(255,255,255,.04);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.08);
-}
-
-/* ====================================
-   PREMIUM GRADIENT TEXT
-==================================== */
-
-.gradient-text{
-
-    background:
-    linear-gradient(
-        135deg,
-        #7C3AED,
-        #06B6D4
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-}
-
-/* ====================================
-   CUSTOM SCROLLBAR
+   SCROLLBAR
 ==================================== */
 
 ::-webkit-scrollbar{
-
     width:10px;
 }
 
 ::-webkit-scrollbar-track{
-
     background:#050816;
 }
 
 ::-webkit-scrollbar-thumb{
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         180deg,
         #7C3AED,
         #06B6D4
     );
-
     border-radius:999px;
 }
