@@ -1,139 +1,263 @@
-/* ==========================
-   FADE UP ANIMATION
-========================== */
+/* ====================================
+   PARALLAX BACKGROUND
+==================================== */
 
-const animatedElements = document.querySelectorAll(
-    ".hero-left, .hero-right, .about-card, .project-card, .skill-card, .social-card, .experience-card"
-);
+const gradients =
+document.querySelectorAll(".bg-gradient");
 
-const animationObserver = new IntersectionObserver(
-    (entries) => {
+window.addEventListener("mousemove", e => {
 
-        entries.forEach((entry) => {
+const x =
+e.clientX / window.innerWidth;
 
-            if(entry.isIntersecting){
+const y =
+e.clientY / window.innerHeight;
 
-                entry.target.style.opacity = "1";
+gradients.forEach((gradient,index)=>{
 
-                entry.target.style.transform =
-                "translateY(0px)";
+const speed =
+(index + 1) * 20;
 
-            }
-
-        });
-
-    },
-    {
-        threshold:0.1
-    }
-);
-
-animatedElements.forEach((element) => {
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-    "translateY(60px)";
-
-    element.style.transition =
-    "all .8s ease";
-
-    animationObserver.observe(element);
+gradient.style.transform =
+`translate(
+${x * speed}px,
+${y * speed}px
+)`;
 
 });
 
-/* ==========================
-   HERO FLOATING EFFECT
-========================== */
-
-const heroAvatar =
-document.querySelector(".avatar-area");
-
-if(heroAvatar){
-
-    let position = 0;
-
-    setInterval(() => {
-
-        position += 0.03;
-
-        heroAvatar.style.transform =
-        `translateY(${Math.sin(position) * 10}px)`;
-
-    },16);
-
-}
-
-/* ==========================
-   FLOATING TAGS
-========================== */
-
-const floatingTags =
-document.querySelectorAll(".floating-tag");
-
-floatingTags.forEach((tag,index)=>{
-
-    let pos = 0;
-
-    setInterval(()=>{
-
-        pos += 0.02;
-
-        tag.style.transform =
-        `translateY(${Math.sin(pos + index)*8}px)`;
-
-    },16);
-
 });
 
-/* ==========================
-   PROJECT CARD GLOW
-========================== */
+/* ====================================
+   PROJECT CARDS
+==================================== */
 
 const projectCards =
 document.querySelectorAll(".project-card");
 
 projectCards.forEach(card => {
 
-    card.addEventListener("mousemove",(e)=>{
+card.addEventListener("mousemove", e => {
 
-        const rect =
-        card.getBoundingClientRect();
+const rect =
+card.getBoundingClientRect();
 
-        const x =
-        e.clientX - rect.left;
+const x =
+e.clientX - rect.left;
 
-        const y =
-        e.clientY - rect.top;
+const y =
+e.clientY - rect.top;
 
-        card.style.background =
-        `radial-gradient(circle at ${x}px ${y}px,
-        rgba(124,58,237,.18),
-        rgba(255,255,255,.03))`;
+const rotateY =
+((x / rect.width) - 0.5) * 12;
 
-    });
+const rotateX =
+((y / rect.height) - 0.5) * -12;
 
-    card.addEventListener("mouseleave",()=>{
-
-        card.style.background =
-        "rgba(255,255,255,.03)";
-
-    });
+card.style.transform =
+`
+perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-8px)
+`;
 
 });
 
-/* ==========================
-   SECTION STAGGER EFFECT
-========================== */
+card.addEventListener("mouseleave", () => {
 
-const staggerCards =
+card.style.transform =
+"translateY(0)";
+
+});
+
+});
+
+/* ====================================
+   SKILL CARDS
+==================================== */
+
+const skillCards =
+document.querySelectorAll(".skill-card");
+
+skillCards.forEach(card => {
+
+card.addEventListener("mouseenter", () => {
+
+card.style.boxShadow =
+"0 20px 40px rgba(6,182,212,.15)";
+
+});
+
+card.addEventListener("mouseleave", () => {
+
+card.style.boxShadow =
+"none";
+
+});
+
+});
+
+/* ====================================
+   SOCIAL CARDS
+==================================== */
+
+const socialCards =
+document.querySelectorAll(".social-card");
+
+socialCards.forEach(card => {
+
+card.addEventListener("mouseenter", () => {
+
+card.style.transform =
+"translateY(-10px) scale(1.02)";
+
+});
+
+card.addEventListener("mouseleave", () => {
+
+card.style.transform =
+"translateY(0) scale(1)";
+
+});
+
+});
+
+/* ====================================
+   ACHIEVEMENTS
+==================================== */
+
+const achievements =
 document.querySelectorAll(
-".skill-card,.social-card,.experience-card"
+".achievement-card"
 );
 
-staggerCards.forEach((card,index)=>{
+achievements.forEach(card => {
 
-    card.style.transitionDelay =
-    `${index * 0.08}s`;
+card.addEventListener("mouseenter", () => {
+
+card.style.transform =
+"translateY(-10px)";
 
 });
+
+card.addEventListener("mouseleave", () => {
+
+card.style.transform =
+"translateY(0)";
+
+});
+
+});
+
+/* ====================================
+   HEADER BLUR
+==================================== */
+
+const pageHeader =
+document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+if(!pageHeader) return;
+
+const scroll =
+window.scrollY;
+
+pageHeader.style.backdropFilter =
+`blur(${20 + scroll/50}px)`;
+
+});
+
+/* ====================================
+   FLOATING DOCK EFFECT
+==================================== */
+
+const dockButtons =
+document.querySelectorAll(".dock-item");
+
+dockButtons.forEach(btn => {
+
+btn.addEventListener("mousemove", e => {
+
+const rect =
+btn.getBoundingClientRect();
+
+const x =
+e.clientX - rect.left;
+
+const y =
+e.clientY - rect.top;
+
+btn.style.transform =
+`
+translate(
+${(x-30)/10}px,
+${(y-30)/10}px
+)
+`;
+
+});
+
+btn.addEventListener("mouseleave", () => {
+
+btn.style.transform =
+"translate(0,0)";
+
+});
+
+});
+
+/* ====================================
+   HERO STATS GLOW
+==================================== */
+
+const stats =
+document.querySelectorAll(
+".stat-item h3"
+);
+
+setInterval(() => {
+
+stats.forEach(stat => {
+
+stat.style.filter =
+"drop-shadow(0 0 18px rgba(124,58,237,.6))";
+
+setTimeout(() => {
+
+stat.style.filter =
+"none";
+
+},1000);
+
+});
+
+},4000);
+
+/* ====================================
+   AVATAR GLOW
+==================================== */
+
+const avatar =
+document.querySelector(
+".avatar-area img"
+);
+
+if(avatar){
+
+setInterval(() => {
+
+avatar.style.boxShadow =
+"0 0 100px rgba(124,58,237,.45)";
+
+setTimeout(() => {
+
+avatar.style.boxShadow =
+"0 0 60px rgba(124,58,237,.25)";
+
+},1200);
+
+},3500);
+
+}
