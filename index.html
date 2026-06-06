@@ -4,928 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aziz Asadov | AI Builder & Digital Creator</title>
-<meta name="description" content="Aziz Asadov - AI Builder, Digital Creator, Startup Founder.">
+<meta name="description" content="Aziz Asadov - AI Builder, Digital Creator, Startup Founder. Sun'iy intellekt va raqamli yechimlar.">
 <meta name="theme-color" content="#0a0e27">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-:root {
-  --bg: #050816;
-  --bg2: #0B1220;
-  --card: rgba(255,255,255,.04);
-  --border: rgba(255,255,255,.08);
-  --text: #ffffff;
-  --muted: #94A3B8;
-  --accent: #7C3AED;
-  --accent2: #06B6D4;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', 'Poppins', sans-serif;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-.container {
-  width: min(1280px, 92%);
-  margin: auto;
-}
-
-/* LANGUAGE TOGGLE */
-.language-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
-  display: flex;
-  gap: 10px;
-}
-
-.lang-btn {
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.08);
-  color: white;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .3s ease;
-}
-
-.lang-btn:hover,
-.lang-btn.active {
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  border-color: transparent;
-}
-
-/* LOADER */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #050816 0%, #0B1220 50%, #050816 100%);
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.loader-content {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.orbiter-outer, .orbiter-middle, .orbiter-inner {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(124,58,237,.3);
-}
-
-.orbiter-outer {
-  width: 280px;
-  height: 280px;
-  animation: spin 20s linear infinite;
-}
-
-.orbiter-middle {
-  width: 200px;
-  height: 200px;
-  border-color: rgba(6,182,212,.4);
-  animation: spin 15s linear infinite reverse;
-}
-
-.orbiter-inner {
-  width: 120px;
-  height: 120px;
-  border: 3px solid rgba(124,58,237,.6);
-  animation: spin 10s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.core-orb {
-  position: absolute;
-  border-radius: 50%;
-}
-
-.orb-1 {
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(6,182,212,.8), rgba(124,58,237,.3));
-  animation: pulse1 3s ease-in-out infinite;
-}
-
-.orb-2 {
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle, rgba(124,58,237,.9), rgba(6,182,212,.2));
-  animation: pulse2 2s ease-in-out infinite;
-}
-
-.orb-3 {
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(255,255,255,.9), rgba(124,58,237,.5));
-  animation: pulse3 1s ease-in-out infinite;
-}
-
-@keyframes pulse1 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-@keyframes pulse2 {
-  0%, 100% { transform: scale(0.9); }
-  50% { transform: scale(1.1); }
-}
-
-@keyframes pulse3 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-.particle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,.8), rgba(124,58,237,.4));
-  animation: float 3s ease-in-out infinite;
-}
-
-.particle-1 { top: 0; left: 50%; }
-.particle-2 { top: 50%; right: 0; animation-delay: 1s; }
-.particle-3 { bottom: 0; left: 50%; animation-delay: 2s; }
-.particle-4 { top: 0; left: 50%; animation-delay: 0.5s; }
-.particle-5 { top: 50%; right: 0; animation-delay: 1.5s; }
-.particle-6 { bottom: 0; left: 50%; animation-delay: 2.5s; }
-
-@keyframes float {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.3); opacity: 1; }
-}
-
-#loader.hidden {
-  animation: fadeOut .8s ease forwards;
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; pointer-events: none; }
-}
-
-/* BACKGROUND */
-.bg-gradient {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: .2;
-  pointer-events: none;
-  z-index: -1;
-  animation: drift 20s ease-in-out infinite;
-}
-
-@keyframes drift {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(30px); }
-}
-
-.bg-gradient-1 { width: 500px; height: 500px; background: #7C3AED; top: -200px; left: -150px; }
-.bg-gradient-2 { width: 450px; height: 450px; background: #06B6D4; right: -150px; top: 20%; animation-delay: 2s; }
-.bg-gradient-3 { width: 400px; height: 400px; background: #7C3AED; bottom: -150px; left: 40%; animation-delay: 4s; }
-.bg-gradient-4 { width: 350px; height: 350px; background: #06B6D4; bottom: 10%; right: 10%; animation-delay: 6s; opacity: .15; }
-
-.section {
-  padding: 100px 0;
-}
-
-.section-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
-}
-
-.section-label {
-  color: #06B6D4;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.section-header h2 {
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 1.1;
-  margin: 15px 0;
-  background: linear-gradient(135deg, #ffffff, #a5b4fc, #67e8f9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-header p {
-  color: var(--muted);
-  font-size: 16px;
-}
-
-.header {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1280px, 92%);
-  z-index: 1000;
-  backdrop-filter: blur(20px);
-  background: rgba(11,18,32,.6);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 24px;
-  transition: all .4s ease;
-}
-
-.header.scrolled {
-  background: rgba(11,18,32,.95);
-  border-color: rgba(124,58,237,.2);
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 24px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.logo-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-}
-
-.logo-content h4 {
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  transition: .3s;
-  position: relative;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: #06B6D4;
-}
-
-.navbar a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #7C3AED, #06B6D4);
-  transition: .3s;
-}
-
-.navbar a:hover::after,
-.navbar a.active::after {
-  width: 100%;
-}
-
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* FLOATING DOCK */
-.floating-dock {
-  position: fixed;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.dock-item {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: blur(20px);
-  border-radius: 14px;
-  text-decoration: none;
-  color: white;
-  transition: .35s;
-}
-
-.dock-item i {
-  font-size: 18px;
-}
-
-.dock-item:hover {
-  transform: translateX(-10px) scale(1.1);
-  background: rgba(124,58,237,.3);
-}
-
-.dock-tooltip {
-  position: absolute;
-  right: 65px;
-  white-space: nowrap;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: #0B1220;
-  font-size: 11px;
-  opacity: 0;
-  pointer-events: none;
-  transition: .3s;
-}
-
-.dock-item:hover .dock-tooltip {
-  opacity: 1;
-}
-
-.primary-btn, .secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 28px;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  transition: .35s;
-}
-
-.primary-btn {
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  color: white;
-  border: none;
-}
-
-.primary-btn:hover {
-  transform: translateY(-3px);
-}
-
-.secondary-btn {
-  border: 2px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.04);
-  color: white;
-}
-
-.secondary-btn:hover {
-  transform: translateY(-3px);
-  background: rgba(255,255,255,.1);
-}
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 80px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.hero-left {
-  max-width: 650px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(124,58,237,.12);
-  border: 1px solid rgba(124,58,237,.25);
-  color: #C4B5FD;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.hero-left h1 {
-  font-size: 72px;
-  font-weight: 900;
-  line-height: 1;
-  margin-bottom: 14px;
-  background: linear-gradient(135deg, #ffffff, #a5b4fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-left h2 {
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.hero-left p {
-  font-size: 16px;
-  color: var(--muted);
-  margin-bottom: 32px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.hero-mini-stats {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.stat-item h3 {
-  font-size: 36px;
-  font-weight: 900;
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.stat-item span {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.hero-right {
-  display: flex;
-  justify-content: center;
-}
-
-.avatar-area {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-avatar {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  animation: float 6s ease-in-out infinite;
-}
-
-.avatar-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,.08);
-  animation: rotateClockwise 20s linear infinite;
-}
-
-@keyframes rotateClockwise {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.ring-1 { width: 320px; height: 320px; }
-.ring-2 { width: 380px; height: 380px; }
-.ring-3 { width: 440px; height: 440px; }
-
-.floating-tag {
-  position: absolute;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
-  font-size: 10px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.tag-1 { top: 60px; right: -40px; }
-.tag-2 { top: 50%; right: -60px; }
-.tag-3 { bottom: 80px; right: -40px; }
-
-.about { position: relative; }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
-.large-card {
-  padding: 35px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-}
-
-.large-card span {
-  color: #06B6D4;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.large-card h3 {
-  font-size: 28px;
-  margin: 12px 0;
-  font-weight: 900;
-}
-
-.large-card p {
-  color: var(--muted);
-  font-size: 14px;
-  margin: 12px 0;
-}
-
-.about-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.info-card {
-  padding: 20px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  transition: all .4s ease;
-}
-
-.info-card:hover {
-  background: rgba(255,255,255,.08);
-  border-color: rgba(124,58,237,.3);
-  transform: translateY(-3px);
-}
-
-.info-card h4 {
-  font-size: 11px;
-  font-weight: 700;
-  color: #06B6D4;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.info-card p {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-  padding-left: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #7C3AED 0%, #06B6D4 50%, transparent 100%);
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -15px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #06B6D4;
-  border: 2px solid #050816;
-}
-
-.timeline-content {
-  padding: 18px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  transition: all .4s ease;
-}
-
-.timeline-content:hover {
-  background: rgba(255,255,255,.08);
-  transform: translateX(8px);
-}
-
-.timeline-content span {
-  color: #06B6D4;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.timeline-content h3 {
-  font-size: 16px;
-  margin: 8px 0;
-  color: #fff;
-}
-
-.timeline-content p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.achievement-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-}
-
-.achievement-card {
-  padding: 32px 24px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  text-align: center;
-  transition: all .4s ease;
-}
-
-.achievement-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(124,58,237,.3);
-}
-
-.achievement-card h3 {
-  font-size: 48px;
-  font-weight: 900;
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
-}
-
-.achievement-card span {
-  color: #06B6D4;
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.achievement-card p {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 8px 0;
-  color: #fff;
-}
-
-.achievement-card small {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
-}
-
-.skills-column {
-  padding: 28px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  transition: all .4s ease;
-}
-
-.skills-column:hover {
-  transform: translateY(-5px);
-  border-color: rgba(124,58,237,.3);
-}
-
-.skills-column h3 {
-  font-size: 16px;
-  margin-bottom: 18px;
-  color: #06B6D4;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.tech-arsenal {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  border-radius: 10px;
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.06);
-  transition: all .3s ease;
-  cursor: pointer;
-}
-
-.tech-item:hover {
-  background: rgba(124,58,237,.2);
-  transform: scale(1.05);
-}
-
-.tech-item i {
-  font-size: 28px;
-  margin-bottom: 6px;
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.tech-item span {
-  font-size: 11px;
-  font-weight: 600;
-  color: #fff;
-  text-align: center;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.service-card {
-  padding: 28px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  text-align: center;
-  transition: all .4s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(124,58,237,.3);
-}
-
-.service-card i {
-  font-size: 40px;
-  background: linear-gradient(135deg, #7C3AED, #06B6D4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 14px;
-}
-
-.service-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.service-card p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.info-item {
-  padding: 16px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  display: flex;
-  gap: 12px;
-  transition: all .3s ease;
-}
-
-.info-item:hover {
-  border-color: rgba(124,58,237,.3);
-  background: rgba(124,58,237,.08);
-}
-
-.info-item i {
-  font-size: 20px;
-  color: #06B6D4;
-}
-
-.info-item h4 {
-  color: #06B6D4;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.info-item p {
-  color: #fff;
-  font-weight: 600;
-  font-size: 13px;
-}
-
-.footer {
-  background: rgba(10,14,39,.5);
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding: 40px 0 20px;
-  text-align: center;
-}
-
-.footer-content {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.heart {
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@media (max-width: 768px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 30px; }
-  .navbar { display: none; }
-  .mobile-menu-btn { display: block; }
-  .skills-container { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-grid { grid-template-columns: 1fr; }
-  .hero-left h1 { font-size: 48px; }
-}
-
-@media (max-width: 480px) {
-  .hero-left h1 { font-size: 36px; }
-  .section-header h2 { font-size: 32px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .achievement-grid { grid-template-columns: 1fr; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -962,271 +49,645 @@ body {
 <!-- FLOATING DOCK -->
 <div class="floating-dock">
 <a href="tel:+998505033441" class="dock-item"><i class="fas fa-phone"></i><span class="dock-tooltip">+998 50 503 34 41</span></a>
-<a href="https://t.me/AzizjonAsadov_bot" target="_blank" class="dock-item"><i class="fab fa-telegram"></i><span class="dock-tooltip">@AzizjonAsadov_bot</span></a>
-<a href="https://instagram.com/azizasadov_official" target="_blank" class="dock-item"><i class="fab fa-instagram"></i><span class="dock-tooltip">@azizasadov_official</span></a>
+<a href="https://t.me/Azizjon_Asadov" target="_blank" class="dock-item"><i class="fab fa-telegram"></i><span class="dock-tooltip">Telegram</span></a>
+<a href="https://instagram.com/azizasadov_official" target="_blank" class="dock-item"><i class="fab fa-instagram"></i><span class="dock-tooltip">Instagram</span></a>
+<a href="https://linkedin.com/in/aziz-asadov-5956373b1" target="_blank" class="dock-item"><i class="fab fa-linkedin"></i><span class="dock-tooltip">LinkedIn</span></a>
+<a href="https://facebook.com/azizjonasadov14" target="_blank" class="dock-item"><i class="fab fa-facebook"></i><span class="dock-tooltip">Facebook</span></a>
+<a href="https://x.com/AzizjonAsadov" target="_blank" class="dock-item"><i class="fab fa-x-twitter"></i><span class="dock-tooltip">X/Twitter</span></a>
 </div>
 
 <!-- HEADER -->
 <header class="header">
 <div class="container">
 <div class="logo">
-<div class="logo-avatar"></div>
+<img src="images/avatar.png" alt="Avatar" class="logo-avatar">
 <div class="logo-content">
 <h4>Aziz Asadov</h4>
-<span><span class="lang-uz">AI Builder</span><span class="lang-en" style="display:none;">AI Builder</span></span>
+<span class="lang-uz">AI Builder</span><span class="lang-en" style="display:none;">AI Builder</span>
 </div>
 </div>
 <nav class="navbar">
 <a href="#home" class="nav-link"><span class="lang-uz">Bosh</span><span class="lang-en" style="display:none;">Home</span></a>
-<a href="#about" class="nav-link"><span class="lang-uz">Bio</span><span class="lang-en" style="display:none;">About</span></a>
-<a href="#experience" class="nav-link"><span class="lang-uz">Tajriba</span><span class="lang-en" style="display:none;">Exp</span></a>
+<a href="#about" class="nav-link"><span class="lang-uz">Men haqimda</span><span class="lang-en" style="display:none;">About</span></a>
 <a href="#achievements" class="nav-link"><span class="lang-uz">Natijalar</span><span class="lang-en" style="display:none;">Results</span></a>
+<a href="#ai-projects" class="nav-link"><span class="lang-uz">AI Loyihalar</span><span class="lang-en" style="display:none;">AI Projects</span></a>
 <a href="#services" class="nav-link"><span class="lang-uz">Xizmatlar</span><span class="lang-en" style="display:none;">Services</span></a>
+<a href="#tech-stack" class="nav-link"><span class="lang-uz">Texnologiyalar</span><span class="lang-en" style="display:none;">Tech Stack</span></a>
 <a href="#contact" class="nav-link"><span class="lang-uz">Aloqa</span><span class="lang-en" style="display:none;">Contact</span></a>
 </nav>
 <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
 </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section id="home" class="hero">
 <div class="container">
 <div class="hero-grid">
 <div class="hero-left">
-<div class="hero-badge"><span class="lang-uz">AI Builder • Digital Creator • Team Leader</span><span class="lang-en" style="display:none;">AI Builder • Digital Creator • Team Leader</span></div>
+<div class="hero-badge">
+<span class="lang-uz">🚀 AI Builder • Digital Creator • Team Leader</span>
+<span class="lang-en" style="display:none;">🚀 AI Builder • Digital Creator • Team Leader</span>
+</div>
 <h1>Aziz Asadov</h1>
-<h2><span class="lang-uz">Sun'iy intellekt asosida real biznes yechimlari</span><span class="lang-en" style="display:none;">AI-Powered Real Business Solutions</span></h2>
-<p><span class="lang-uz">Men oddiy g'oyalarni real ishlaydigan AI mahsulotlari, Telegram botlar, web saytlar, avtomatlashtirish tizimlari va raqamli platformalarga aylantiraman.</span><span class="lang-en" style="display:none;">I transform simple ideas into real working AI products, Telegram bots, websites, automation systems and digital platforms.</span></p>
+<h2>
+<span class="lang-uz">Sun'iy intellekt asosida real biznes yechimlari</span>
+<span class="lang-en" style="display:none;">AI-Powered Real Business Solutions</span>
+</h2>
+<p>
+<span class="lang-uz">Men g'oyalarni real ishlaydigan AI mahsulotlari, Telegram botlar, veb-saytlar va avtomatlashtirish tizimlarina aylantiraman. 20+ AI loyiha, 200+ media kontent, 10+ hamkorlar bilan ishlash tajribasim bor.</span>
+<span class="lang-en" style="display:none;">I transform ideas into AI products, Telegram bots, websites and automation systems. Experience with 20+ AI projects, 200+ media content, and 10+ partners.</span>
+</p>
 <div class="hero-buttons">
-<a href="#achievements" class="primary-btn"><span class="lang-uz">Natijalarni Ko'rish</span><span class="lang-en" style="display:none;">View Results</span></a>
-<a href="#contact" class="secondary-btn"><span class="lang-uz">Bog'lanish</span><span class="lang-en" style="display:none;">Contact</span></a>
+<button class="primary-btn" onclick="location.href='#contact'">
+<span class="lang-uz">Bog'lanish</span>
+<span class="lang-en" style="display:none;">Contact Me</span>
+</button>
+<button class="secondary-btn" onclick="location.href='#services'">
+<span class="lang-uz">Xizmatlar</span>
+<span class="lang-en" style="display:none;">Services</span>
+</button>
 </div>
 <div class="hero-mini-stats">
-<div class="stat-item"><h3 class="counter" data-target="20">20</h3><span class="lang-uz">+ AI Loyihalar</span><span class="lang-en" style="display:none;">+ AI Projects</span></div>
-<div class="stat-item"><h3 class="counter" data-target="200">200</h3><span class="lang-uz">+ Kontentlar</span><span class="lang-en" style="display:none;">+ Content</span></div>
-<div class="stat-item"><h3 class="counter" data-target="15">15</h3><span class="lang-uz">+ Web & Bot</span><span class="lang-en" style="display:none;">+ Web & Bot</span></div>
+<div class="stat-item">
+<h3>20+</h3>
+<span class="lang-uz">AI Loyihalari</span>
+<span class="lang-en" style="display:none;">AI Projects</span>
+</div>
+<div class="stat-item">
+<h3>200+</h3>
+<span class="lang-uz">Kontent</span>
+<span class="lang-en" style="display:none;">Content</span>
+</div>
+<div class="stat-item">
+<h3>10+</h3>
+<span class="lang-uz">Hamkorlar</span>
+<span class="lang-en" style="display:none;">Partners</span>
+</div>
+<div class="stat-item">
+<h3>24/7</h3>
+<span class="lang-uz">Innovatsiya</span>
+<span class="lang-en" style="display:none;">Innovation</span>
+</div>
 </div>
 </div>
 <div class="hero-right">
 <div class="avatar-area">
+<img src="images/avatar.png" alt="Aziz Asadov" class="hero-avatar">
 <div class="avatar-ring ring-1"></div>
 <div class="avatar-ring ring-2"></div>
 <div class="avatar-ring ring-3"></div>
-<div class="hero-avatar"></div>
-<div class="floating-tag tag-1"><span class="lang-uz">AI Strategist</span><span class="lang-en" style="display:none;">AI Strategist</span></div>
-<div class="floating-tag tag-2"><span class="lang-uz">Team Leader</span><span class="lang-en" style="display:none;">Team Leader</span></div>
-<div class="floating-tag tag-3"><span class="lang-uz">Founder</span><span class="lang-en" style="display:none;">Founder</span></div>
+<div class="floating-tag tag-1"><span class="lang-uz">🤖 AI</span><span class="lang-en" style="display:none;">🤖 AI</span></div>
+<div class="floating-tag tag-2"><span class="lang-uz">💻 Web</span><span class="lang-en" style="display:none;">💻 Web</span></div>
+<div class="floating-tag tag-3"><span class="lang-uz">🚀 Dev</span><span class="lang-en" style="display:none;">🚀 Dev</span></div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="about section">
+<!-- ABOUT SECTION -->
+<section id="about" class="section about">
 <div class="container">
 <div class="section-header">
-<span class="section-label"><span class="lang-uz">BIO</span><span class="lang-en" style="display:none;">BIO</span></span>
-<h2><span class="lang-uz">Men Haqimda</span><span class="lang-en" style="display:none;">About Me</span></h2>
+<span class="section-label">
+<span class="lang-uz">Men haqimda</span>
+<span class="lang-en" style="display:none;">About Me</span>
+</span>
+<h2>
+<span class="lang-uz">Men kim? Nima qilaman?</span>
+<span class="lang-en" style="display:none;">Who Am I? What Do I Do?</span>
+</h2>
+<p>
+<span class="lang-uz">Sun'iy intellekt, web texnologiyalar va biznes avtomatlashtirish sohasida mutaxassis</span>
+<span class="lang-en" style="display:none;">Specialist in AI, web technologies and business automation</span>
+</p>
 </div>
+
 <div class="about-grid">
 <div class="large-card">
-<span><span class="lang-uz">KIM MAN?</span><span class="lang-en" style="display:none;">WHO AM I?</span></span>
-<h3><span class="lang-uz">Asadov Aziz Alisherovich</span><span class="lang-en" style="display:none;">Aziz Asadov</span></h3>
-<p><span class="lang-uz">Me Izdihom PR/Marketing Agency kompaniyasida AI bo'limi Team Leader lavozimida ishlayman. Sun'iy intellekt, avtomatlashtirish va raqamli mahsulotlar yaratish yo'nalishida 2+ yildan ortiq tajribaga ega.</span><span class="lang-en" style="display:none;">I work as an AI Team Leader at Izdihom PR/Marketing Agency with 2+ years of experience in AI, automation and digital product development.</span></p>
+<span class="lang-uz">FAOLIYAT</span>
+<span class="lang-en" style="display:none;">ACTIVITY</span>
+<h3>
+<span class="lang-uz">Amaliy Ishlar</span>
+<span class="lang-en" style="display:none;">Practical Work</span>
+</h3>
+<p>
+<span class="lang-uz">AI tizimlarini ishlab chiqish, Telegram botlarini loyihalashtirish, biznes avtomatlashtirish va raqamli transformatsiya sohasida amaliy tajribam bor. Har bir loyiha mukammal natija olish uchun poyabon bilan bajariladi.</span>
+<span class="lang-en" style="display:none;">I have practical experience in developing AI systems, designing Telegram bots, business automation and digital transformation. Every project is executed with precision for perfect results.</span>
+</p>
 </div>
+
 <div class="about-right">
-<div class="info-card"><h4><span class="lang-uz">Lavozim</span><span class="lang-en" style="display:none;">Position</span></h4><p>Izdihom Agency</p></div>
-<div class="info-card"><h4><span class="lang-uz">Yo'nalish</span><span class="lang-en" style="display:none;">Focus</span></h4><p><span class="lang-uz">AI Systems</span><span class="lang-en" style="display:none;">AI Systems</span></p></div>
-<div class="info-card"><h4><span class="lang-uz">Asosiy</span><span class="lang-en" style="display:none;">Main</span></h4><p><span class="lang-uz">Telegram Botlar</span><span class="lang-en" style="display:none;">Telegram Bots</span></p></div>
-<div class="info-card"><h4><span class="lang-uz">Faoliyat</span><span class="lang-en" style="display:none;">Activity</span></h4><p><span class="lang-uz">AI Media</span><span class="lang-en" style="display:none;">AI Media</span></p></div>
+<div class="info-card">
+<h4>
+<span class="lang-uz">🎓 Tajriba</span>
+<span class="lang-en" style="display:none;">🎓 Experience</span>
+</h4>
+<p>5+ <span class="lang-uz">yil</span><span class="lang-en" style="display:none;">years</span></p>
+</div>
+<div class="info-card">
+<h4>
+<span class="lang-uz">🏆 Proyektlar</span>
+<span class="lang-en" style="display:none;">🏆 Projects</span>
+</h4>
+<p>50+ <span class="lang-uz">tugazlangan</span><span class="lang-en" style="display:none;">completed</span></p>
+</div>
+<div class="info-card">
+<h4>
+<span class="lang-uz">🌍 Xizmatlar</span>
+<span class="lang-en" style="display:none;">🌍 Services</span>
+</h4>
+<p><span class="lang-uz">6 Ta Xizmat</span><span class="lang-en" style="display:none;">6 Services</span></p>
+</div>
+<div class="info-card">
+<h4>
+<span class="lang-uz">⭐ Reytingi</span>
+<span class="lang-en" style="display:none;">⭐ Rating</span>
+</h4>
+<p>4.9/5 <span class="lang-uz">Yuqori</span><span class="lang-en" style="display:none;">High</span></p>
+</div>
 </div>
 </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="section">
-<div class="container">
-<div class="section-header">
-<span class="section-label"><span class="lang-uz">TAJRIBA</span><span class="lang-en" style="display:none;">EXPERIENCE</span></span>
-<h2><span class="lang-uz">Amaliy Faoliyat</span><span class="lang-en" style="display:none;">Work Experience</span></h2>
-</div>
-<div class="timeline">
-<div class="timeline-item" style="position: relative;">
-<div class="timeline-content"><span>2025 - <span class="lang-uz">Hozir</span><span class="lang-en" style="display:none;">Present</span></span><h3><span class="lang-uz">AI Team Leader</span><span class="lang-en" style="display:none;">AI Team Leader</span></h3><p><span class="lang-uz">Izdihom AI bo'limini boshqarish, AI strategiyalar ishlab chiqish</span><span class="lang-en" style="display:none;">Managing AI division, developing strategies</span></p></div>
-</div>
-<div class="timeline-item" style="position: relative;">
-<div class="timeline-content"><span><span class="lang-uz">Davomida</span><span class="lang-en" style="display:none;">Throughout</span></span><h3><span class="lang-uz">AI Media Production</span><span class="lang-en" style="display:none;">AI Media Production</span></h3><p><span class="lang-uz">Video, reklama va media kontentlar yaratish</span><span class="lang-en" style="display:none;">Creating videos and media content</span></p></div>
-</div>
-<div class="timeline-item" style="position: relative;">
-<div class="timeline-content"><span><span class="lang-uz">Hozirgi</span><span class="lang-en" style="display:none;">Current</span></span><h3><span class="lang-uz">Telegram & Web Ekosistema</span><span class="lang-en" style="display:none;">Telegram & Web Ecosystem</span></h3><p><span class="lang-uz">Botlar va web saytlar yaratish</span><span class="lang-en" style="display:none;">Creating bots and websites</span></p></div>
-</div>
-</div>
-</section>
-
-<!-- ACHIEVEMENTS -->
+<!-- ACHIEVEMENTS SECTION -->
 <section id="achievements" class="section">
 <div class="container">
 <div class="section-header">
-<span class="section-label"><span class="lang-uz">NATIJALAR</span><span class="lang-en" style="display:none;">RESULTS</span></span>
-<h2><span class="lang-uz">Yutuqlar va Natijalar</span><span class="lang-en" style="display:none;">Achievements & Results</span></h2>
+<span class="section-label">
+<span class="lang-uz">Yutuqlar</span>
+<span class="lang-en" style="display:none;">Achievements</span>
+</span>
+<h2>
+<span class="lang-uz">Natijalar va Yutuqlar</span>
+<span class="lang-en" style="display:none;">Results and Achievements</span>
+</h2>
 </div>
+
 <div class="achievement-grid">
-<div class="achievement-card"><h3 class="counter" data-target="20">0</h3><span>+</span><p><span class="lang-uz">AI Loyihalar</span><span class="lang-en" style="display:none;">AI Projects</span></p></div>
-<div class="achievement-card"><h3 class="counter" data-target="200">0</h3><span>+</span><p><span class="lang-uz">Kontentlar</span><span class="lang-en" style="display:none;">Content</span></p></div>
-<div class="achievement-card"><h3 class="counter" data-target="12">0</h3><span>+</span><p><span class="lang-uz">Hamkorlar</span><span class="lang-en" style="display:none;">Partners</span></p></div>
-<div class="achievement-card"><h3 class="counter" data-target="15">0</h3><span>+</span><p><span class="lang-uz">Web & Bot</span><span class="lang-en" style="display:none;">Web & Bot</span></p></div>
+<div class="achievement-card animate-counter">
+<h3 data-target="20">0</h3>
+<span>+</span>
+<p>
+<span class="lang-uz">AI Loyihalari</span>
+<span class="lang-en" style="display:none;">AI Projects</span>
+</p>
+<small>
+<span class="lang-uz">Turli yo'nalishlarda</span>
+<span class="lang-en" style="display:none;">In various directions</span>
+</small>
+</div>
+
+<div class="achievement-card animate-counter">
+<h3 data-target="200">0</h3>
+<span>+</span>
+<p>
+<span class="lang-uz">Kontent Yaratilgan</span>
+<span class="lang-en" style="display:none;">Content Created</span>
+</p>
+<small>
+<span class="lang-uz">Video, Poster, Media</span>
+<span class="lang-en" style="display:none;">Video, Posters, Media</span>
+</small>
+</div>
+
+<div class="achievement-card animate-counter">
+<h3 data-target="10">0</h3>
+<span>+</span>
+<p>
+<span class="lang-uz">Hamkorlar</span>
+<span class="lang-en" style="display:none;">Partners</span>
+</p>
+<small>
+<span class="lang-uz">Turli bizneslar</span>
+<span class="lang-en" style="display:none;">Various businesses</span>
+</small>
+</div>
+
+<div class="achievement-card animate-counter">
+<h3 data-target="24">0</h3>
+<span>/7</span>
+<p>
+<span class="lang-uz">Innovatsiya</span>
+<span class="lang-en" style="display:none;">Innovation</span>
+</p>
+<small>
+<span class="lang-uz">Doimo yangilanib</span>
+<span class="lang-en" style="display:none;">Always updated</span>
+</small>
+</div>
 </div>
 </section>
 
-<!-- SERVICES -->
+<!-- AI PROJECTS SECTION -->
+<section id="ai-projects" class="section">
+<div class="container">
+<div class="section-header">
+<span class="section-label">
+<span class="lang-uz">Loyihalar</span>
+<span class="lang-en" style="display:none;">Projects</span>
+</span>
+<h2>
+<span class="lang-uz">Raqamli Ekotizim</span>
+<span class="lang-en" style="display:none;">Digital Ecosystem</span>
+</h2>
+<p>
+<span class="lang-uz">Turli ijtimoiy tarmoqlar va platformalarda professional mavjudlik</span>
+<span class="lang-en" style="display:none;">Professional presence on various social networks and platforms</span>
+</p>
+</div>
+
+<div class="achievement-grid">
+<div class="achievement-card social-card">
+<i class="fab fa-telegram"></i>
+<p>
+<span class="lang-uz">Telegram</span>
+<span class="lang-en" style="display:none;">Telegram</span>
+</p>
+<small>
+<span class="lang-uz">To'g'ridan-to'g'ri aloqa</span>
+<span class="lang-en" style="display:none;">Direct communication</span>
+</small>
+<a href="https://t.me/Azizjon_Asadov" target="_blank" class="social-btn">
+<span class="lang-uz">Ochish</span>
+<span class="lang-en" style="display:none;">Open</span>
+</a>
+</div>
+
+<div class="achievement-card social-card">
+<i class="fab fa-instagram"></i>
+<p>
+<span class="lang-uz">Instagram</span>
+<span class="lang-en" style="display:none;">Instagram</span>
+</p>
+<small>
+<span class="lang-uz">AI va media kontenti</span>
+<span class="lang-en" style="display:none;">AI & Media content</span>
+</small>
+<a href="https://instagram.com/azizasadov_official" target="_blank" class="social-btn">
+<span class="lang-uz">Ochish</span>
+<span class="lang-en" style="display:none;">Open</span>
+</a>
+</div>
+
+<div class="achievement-card social-card">
+<i class="fab fa-linkedin"></i>
+<p>
+<span class="lang-uz">LinkedIn</span>
+<span class="lang-en" style="display:none;">LinkedIn</span>
+</p>
+<small>
+<span class="lang-uz">Professional profil</span>
+<span class="lang-en" style="display:none;">Professional profile</span>
+</small>
+<a href="https://linkedin.com/in/aziz-asadov-5956373b1" target="_blank" class="social-btn">
+<span class="lang-uz">Ochish</span>
+<span class="lang-en" style="display:none;">Open</span>
+</a>
+</div>
+
+<div class="achievement-card social-card">
+<i class="fab fa-facebook"></i>
+<p>
+<span class="lang-uz">Facebook</span>
+<span class="lang-en" style="display:none;">Facebook</span>
+</p>
+<small>
+<span class="lang-uz">Ijtimoiy mavjudlik</span>
+<span class="lang-en" style="display:none;">Social presence</span>
+</small>
+<a href="https://facebook.com/azizjonasadov14" target="_blank" class="social-btn">
+<span class="lang-uz">Ochish</span>
+<span class="lang-en" style="display:none;">Open</span>
+</a>
+</div>
+
+<div class="achievement-card social-card">
+<i class="fab fa-x-twitter"></i>
+<p>
+<span class="lang-uz">X (Twitter)</span>
+<span class="lang-en" style="display:none;">X (Twitter)</span>
+</p>
+<small>
+<span class="lang-uz">AI va tech news</span>
+<span class="lang-en" style="display:none;">AI & Tech news</span>
+</small>
+<a href="https://x.com/AzizjonAsadov" target="_blank" class="social-btn">
+<span class="lang-uz">Ochish</span>
+<span class="lang-en" style="display:none;">Open</span>
+</a>
+</div>
+
+<div class="achievement-card social-card">
+<i class="fas fa-globe"></i>
+<p>
+<span class="lang-uz">Portfolio</span>
+<span class="lang-en" style="display:none;">Portfolio</span>
+</p>
+<small>
+<span class="lang-uz">15+ Web Proyekt</span>
+<span class="lang-en" style="display:none;">15+ Web Projects</span>
+</small>
+<a href="#services" class="social-btn">
+<span class="lang-uz">Ko'rish</span>
+<span class="lang-en" style="display:none;">View</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- SERVICES SECTION -->
 <section id="services" class="section">
 <div class="container">
 <div class="section-header">
-<span class="section-label"><span class="lang-uz">XIZMATLAR</span><span class="lang-en" style="display:none;">SERVICES</span></span>
-<h2><span class="lang-uz">Taqdim Etilayotgan Xizmatlar</span><span class="lang-en" style="display:none;">Services Offered</span></h2>
+<span class="section-label">
+<span class="lang-uz">Taqdim Etilayotgan Xizmatlar</span>
+<span class="lang-en" style="display:none;">Services Offered</span>
+</span>
+<h2>
+<span class="lang-uz">Xizmatlar</span>
+<span class="lang-en" style="display:none;">Services</span>
+</h2>
+<p>
+<span class="lang-uz">Raqamli biznesni keyingi bosqichga olib chiqish uchun to'liq yechimlar</span>
+<span class="lang-en" style="display:none;">Complete solutions to take your digital business to the next level</span>
+</p>
 </div>
+
 <div class="services-grid">
-<div class="service-card"><i class="fas fa-brain"></i><h3><span class="lang-uz">AI Tizimlari</span><span class="lang-en" style="display:none;">AI Systems</span></h3><p><span class="lang-uz">Sun'iy intellekt asosidagi yechimlari</span><span class="lang-en" style="display:none;">AI-powered solutions</span></p></div>
-<div class="service-card"><i class="fab fa-telegram"></i><h3><span class="lang-uz">Telegram Botlar</span><span class="lang-en" style="display:none;">Telegram Bots</span></h3><p><span class="lang-uz">Intelligent Telegram botlar</span><span class="lang-en" style="display:none;">Intelligent Telegram bots</span></p></div>
-<div class="service-card"><i class="fas fa-globe"></i><h3><span class="lang-uz">Web Saytlar</span><span class="lang-en" style="display:none;">Web Sites</span></h3><p><span class="lang-uz">Professional web saytlar</span><span class="lang-en" style="display:none;">Professional websites</span></p></div>
-<div class="service-card"><i class="fas fa-cogs"></i><h3><span class="lang-uz">Avtomatlashtirish</span><span class="lang-en" style="display:none;">Automation</span></h3><p><span class="lang-uz">Biznes jarayonlarini avtomatlashtirish</span><span class="lang-en" style="display:none;">Process automation</span></p></div>
-<div class="service-card"><i class="fas fa-video"></i><h3><span class="lang-uz">AI Media</span><span class="lang-en" style="display:none;">AI Media</span></h3><p><span class="lang-uz">AI yordamida video yaratish</span><span class="lang-en" style="display:none;">AI-generated video</span></p></div>
-<div class="service-card"><i class="fas fa-newspaper"></i><h3><span class="lang-uz">News Platform</span><span class="lang-en" style="display:none;">News Platform</span></h3><p><span class="lang-uz">Dynamic yangiliklar platformasi</span><span class="lang-en" style="display:none;">Dynamic news platform</span></p></div>
+<div class="service-card">
+<i class="fas fa-brain"></i>
+<h3>
+<span class="lang-uz">AI Tizimlar</span>
+<span class="lang-en" style="display:none;">AI Systems</span>
+</h3>
+<p>
+<span class="lang-uz">Sun'iy intellekt yordamida biznesni avtomatlashtirish va masalalarni hal etish</span>
+<span class="lang-en" style="display:none;">Automate business and solve problems with AI</span>
+</p>
+</div>
+
+<div class="service-card">
+<i class="fab fa-telegram"></i>
+<h3>
+<span class="lang-uz">Telegram Botlar</span>
+<span class="lang-en" style="display:none;">Telegram Bots</span>
+</h3>
+<p>
+<span class="lang-uz">Interaktiv Telegram botlarini ishlab chiqish va API integratsiyalari</span>
+<span class="lang-en" style="display:none;">Development of interactive Telegram bots and API integrations</span>
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-cog"></i>
+<h3>
+<span class="lang-uz">Avtomatlashtirish</span>
+<span class="lang-en" style="display:none;">Automation</span>
+</h3>
+<p>
+<span class="lang-uz">Biznes jarayonlarini avtomatlashtirish va optimizatsiya qilish</span>
+<span class="lang-en" style="display:none;">Business process automation and optimization</span>
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-palette"></i>
+<h3>
+<span class="lang-uz">Media Kontent</span>
+<span class="lang-en" style="display:none;">Media Content</span>
+</h3>
+<p>
+<span class="lang-uz">AI yordamida video, poster va media kontentlar yaratish</span>
+<span class="lang-en" style="display:none;">Create videos, posters and media content with AI</span>
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-code"></i>
+<h3>
+<span class="lang-uz">Veb-Ishlab Chiqarish</span>
+<span class="lang-en" style="display:none;">Web Development</span>
+</h3>
+<p>
+<span class="lang-uz">Zamonaviy, responsive va SEO-optimizatsiya qilingan veb-saytlar</span>
+<span class="lang-en" style="display:none;">Modern, responsive and SEO-optimized websites</span>
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-link"></i>
+<h3>
+<span class="lang-uz">API Integratsiyalari</span>
+<span class="lang-en" style="display:none;">API Integrations</span>
+</h3>
+<p>
+<span class="lang-uz">Turli xil platformalar bilan API integratsiyalari va mos kelish</span>
+<span class="lang-en" style="display:none;">API integrations and compatibility with various platforms</span>
+</p>
+</div>
 </div>
 </section>
 
-<!-- SKILLS -->
-<section class="section">
+<!-- TECH STACK SECTION -->
+<section id="tech-stack" class="section">
 <div class="container">
 <div class="section-header">
-<span class="section-label"><span class="lang-uz">KO'NIKMALAR</span><span class="lang-en" style="display:none;">SKILLS</span></span>
-<h2><span class="lang-uz">Texnik Arsenal</span><span class="lang-en" style="display:none;">Tech Arsenal</span></h2>
+<span class="section-label">
+<span class="lang-uz">Arsenal</span>
+<span class="lang-en" style="display:none;">Arsenal</span>
+</span>
+<h2>
+<span class="lang-uz">Texnologiyalar</span>
+<span class="lang-en" style="display:none;">Tech Stack</span>
+</h2>
+<p>
+<span class="lang-uz">Eng yuqori sifatdagi yechim uchun foydalanilayotgan texnologiyalar</span>
+<span class="lang-en" style="display:none;">Technologies used for the highest quality solutions</span>
+</p>
 </div>
+
 <div class="skills-container">
 <div class="skills-column">
-<h3>AI & Backend</h3>
-<div class="tech-arsenal"><div class="tech-item"><i class="fas fa-brain"></i><span>AI</span></div><div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div><div class="tech-item"><i class="fas fa-cube"></i><span>Prompt</span></div><div class="tech-item"><i class="fas fa-cogs"></i><span>API</span></div></div>
+<h3>
+<span class="lang-uz">🤖 AI va ML</span>
+<span class="lang-en" style="display:none;">🤖 AI & ML</span>
+</h3>
+<div class="tech-arsenal">
+<div class="tech-item">
+<i class="fas fa-cube"></i>
+<span>ChatGPT</span>
 </div>
-<div class="skills-column">
-<h3>Models</h3>
-<div class="tech-arsenal"><div class="tech-item"><i class="fas fa-comment"></i><span>ChatGPT</span></div><div class="tech-item"><i class="fas fa-robot"></i><span>Claude</span></div><div class="tech-item"><i class="fas fa-sparkles"></i><span>Gemini</span></div><div class="tech-item"><i class="fas fa-openid"></i><span>OpenAI</span></div></div>
+<div class="tech-item">
+<i class="fas fa-cube"></i>
+<span>Claude</span>
 </div>
-<div class="skills-column">
-<h3>Frontend</h3>
-<div class="tech-arsenal"><div class="tech-item"><i class="fab fa-html5"></i><span>HTML5</span></div><div class="tech-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div><div class="tech-item"><i class="fab fa-js"></i><span>JS</span></div><div class="tech-item"><i class="fab fa-react"></i><span>React</span></div></div>
+<div class="tech-item">
+<i class="fas fa-cube"></i>
+<span>Gemini</span>
 </div>
+<div class="tech-item">
+<i class="fas fa-cube"></i>
+<span>OpenAI API</span>
+</div>
+</div>
+</div>
+
 <div class="skills-column">
-<h3>Integration</h3>
-<div class="tech-arsenal"><div class="tech-item"><i class="fab fa-telegram"></i><span>Telegram</span></div><div class="tech-item"><i class="fas fa-link"></i><span>n8n</span></div><div class="tech-item"><i class="fas fa-cube"></i><span>Make</span></div><div class="tech-item"><i class="fab fa-github"></i><span>GitHub</span></div></div>
+<h3>
+<span class="lang-uz">💻 Dasturlash</span>
+<span class="lang-en" style="display:none;">💻 Programming</span>
+</h3>
+<div class="tech-arsenal">
+<div class="tech-item">
+<i class="fab fa-python"></i>
+<span>Python</span>
+</div>
+<div class="tech-item">
+<i class="fab fa-js"></i>
+<span>JavaScript</span>
+</div>
+<div class="tech-item">
+<i class="fab fa-html5"></i>
+<span>HTML5</span>
+</div>
+<div class="tech-item">
+<i class="fab fa-css3"></i>
+<span>CSS3</span>
+</div>
+</div>
+</div>
+
+<div class="skills-column">
+<h3>
+<span class="lang-uz">🔗 Integratsiyalar</span>
+<span class="lang-en" style="display:none;">🔗 Integrations</span>
+</h3>
+<div class="tech-arsenal">
+<div class="tech-item">
+<i class="fas fa-cube"></i>
+<span>n8n</span>
+</div>
+<div class="tech-item">
+<i class="fas fa-cube"></i>
+<span>Make</span>
+</div>
+<div class="tech-item">
+<i class="fab fa-telegram"></i>
+<span>Telegram API</span>
+</div>
+<div class="tech-item">
+<i class="fab fa-github"></i>
+<span>GitHub API</span>
+</div>
+</div>
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT SECTION -->
 <section id="contact" class="section">
 <div class="container">
 <div class="section-header">
-<span class="section-label"><span class="lang-uz">ALOQA</span><span class="lang-en" style="display:none;">CONTACT</span></span>
-<h2><span class="lang-uz">Bog'lanish</span><span class="lang-en" style="display:none;">Get in Touch</span></h2>
+<span class="section-label">
+<span class="lang-uz">Aloqa</span>
+<span class="lang-en" style="display:none;">Contact</span>
+</span>
+<h2>
+<span class="lang-uz">Men Bilan Bog'lanish</span>
+<span class="lang-en" style="display:none;">Get In Touch</span>
+</h2>
+<p>
+<span class="lang-uz">Sun'iy intellekt yordamida biznesingizni keyingi bosqichga olib chiqamiz</span>
+<span class="lang-en" style="display:none;">Let's take your business to the next level with AI</span>
+</p>
 </div>
+
 <div class="contact-info">
-<div class="info-item"><i class="fas fa-phone"></i><div><h4><span class="lang-uz">Telefon</span><span class="lang-en" style="display:none;">Phone</span></h4><p>+998 50 503 34 41</p></div></div>
-<div class="info-item"><i class="fab fa-telegram"></i><div><h4>Telegram</h4><p>@Azizjon_Asadov</p></div></div>
-<div class="info-item"><i class="fas fa-envelope"></i><div><h4><span class="lang-uz">Email</span><span class="lang-en" style="display:none;">Email</span></h4><p>azizasadov935@gmail.com</p></div></div>
-<div class="info-item"><i class="fab fa-instagram"></i><div><h4>Instagram</h4><p>@azizasadov_official</p></div></div>
+<div class="info-item">
+<i class="fas fa-phone"></i>
+<div>
+<h4>
+<span class="lang-uz">Telefon</span>
+<span class="lang-en" style="display:none;">Phone</span>
+</h4>
+<p><a href="tel:+998505033441">+998 50 503 34 41</a></p>
+</div>
+</div>
+
+<div class="info-item">
+<i class="fab fa-telegram"></i>
+<div>
+<h4>
+<span class="lang-uz">Telegram</span>
+<span class="lang-en" style="display:none;">Telegram</span>
+</h4>
+<p><a href="https://t.me/Azizjon_Asadov" target="_blank">@Azizjon_Asadov</a></p>
+</div>
+</div>
+
+<div class="info-item">
+<i class="fab fa-instagram"></i>
+<div>
+<h4>
+<span class="lang-uz">Instagram</span>
+<span class="lang-en" style="display:none;">Instagram</span>
+</h4>
+<p><a href="https://instagram.com/azizasadov_official" target="_blank">@azizasadov_official</a></p>
+</div>
+</div>
+
+<div class="info-item">
+<i class="fab fa-linkedin"></i>
+<div>
+<h4>
+<span class="lang-uz">LinkedIn</span>
+<span class="lang-en" style="display:none;">LinkedIn</span>
+</h4>
+<p><a href="https://linkedin.com/in/aziz-asadov-5956373b1" target="_blank">Aziz Asadov</a></p>
+</div>
+</div>
+
+<div class="info-item">
+<i class="fab fa-facebook"></i>
+<div>
+<h4>
+<span class="lang-uz">Facebook</span>
+<span class="lang-en" style="display:none;">Facebook</span>
+</h4>
+<p><a href="https://facebook.com/azizjonasadov14" target="_blank">azizjonasadov14</a></p>
+</div>
+</div>
+
+<div class="info-item">
+<i class="fas fa-envelope"></i>
+<div>
+<h4>
+<span class="lang-uz">Email</span>
+<span class="lang-en" style="display:none;">Email</span>
+</h4>
+<p><a href="mailto:azizasadov935@gmail.com">azizasadov935@gmail.com</a></p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
 <div class="container">
-<div class="footer-content"><p>&copy; 2025 Aziz Asadov. <span class="heart">❤️</span> AI Builder</p></div>
+<div class="footer-content">
+<p>
+<span class="lang-uz">© 2026 Aziz Asadov. Barcha huquqlar himoyalangan. <span class="heart">❤️</span> bilan tuzilgan.</span>
+<span class="lang-en" style="display:none;">© 2026 Aziz Asadov. All rights reserved. Made with <span class="heart">❤️</span>.</span>
+</p>
+<p style="font-size: 12px; margin-top: 10px;">
+<span class="lang-uz">Built with HTML5, CSS3 & JavaScript</span>
+<span class="lang-en" style="display:none;">Built with HTML5, CSS3 & JavaScript</span>
+</p>
+</div>
 </div>
 </footer>
 
-<script>
-// Language Toggle
-const langBtns = document.querySelectorAll('.lang-btn');
-let currentLang = 'uz';
-
-langBtns.forEach(btn => {
-  btn.addEventListener('click', function() {
-    const lang = this.dataset.lang;
-    currentLang = lang;
-    
-    langBtns.forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    
-    document.querySelectorAll('.lang-uz').forEach(el => {
-      el.style.display = lang === 'uz' ? 'inline' : 'none';
-    });
-    document.querySelectorAll('.lang-en').forEach(el => {
-      el.style.display = lang === 'en' ? 'inline' : 'none';
-    });
-  });
-});
-
-// Header scroll
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-// Counter animation
-function animateCounter(el, target) {
-  let current = 0;
-  const increment = target / 50;
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      el.textContent = target;
-      clearInterval(timer);
-    } else {
-      el.textContent = Math.floor(current);
-    }
-  }, 30);
-}
-
-// Intersection Observer for counters
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-      entry.target.classList.add('animated');
-      animateCounter(entry.target, parseInt(entry.target.dataset.target));
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.counter').forEach(el => {
-  counterObserver.observe(el);
-});
-
-// Loader
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  if (loader) {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 800);
-    }, 1500);
-  }
-});
-
-console.log('✨ Premium Portfolio Loaded!');
-</script>
+<script src="script.js"></script>
 </body>
 </html>
